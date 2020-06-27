@@ -29,7 +29,11 @@
                 <param name="android-package" value="com.hengan.Xprinter.CordovaXprinter"/>
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml"/>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        </config-file>
         <source-file src="src/android/CordovaXprinter.java" target-dir="src/com/hengan/Xprinter/CordovaXprinter"/>
         <source-file src="src/android/PrinterAdapter.java" target-dir="src/com/hengan/Xprinter/CordovaXprinter"/>
         <source-file src="src/android/PicFromPrintUtils.java" target-dir="src/com/hengan/Xprinter/CordovaXprinter"/>
