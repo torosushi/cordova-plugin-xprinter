@@ -114,7 +114,7 @@ public class CordovaXprinter extends CordovaPlugin {
 
             callbackContext.success(jsonStrs);
         }catch (SecurityException e){
-            callbackContext.error("无法打开蓝牙：程序无权限，请手动开启权限！");
+            callbackContext.error("Unable to open Bluetooth: the program has no permissions, please manually open the permissions");
         }
         catch (Exception e){
             callbackContext.error(e.toString());
@@ -172,13 +172,13 @@ public class CordovaXprinter extends CordovaPlugin {
         if (message != null && message != "") {
             try {
                 printerAdapter.printer(message);
-                callbackContext.success("写入消息成功");
+                callbackContext.success("success");
             }catch (Exception e){
-                callbackContext.success("写入消息失败");
+                callbackContext.success("Failed to write message "+e.toString());
             }
 
         } else {
-            callbackContext.error("消息不能为空");
+            callbackContext.error("Message cannot be empty");
         }
     }
 
@@ -233,7 +233,7 @@ public class CordovaXprinter extends CordovaPlugin {
                 printerAdapter.selectCommand(b);
                 callbackContext.success("写入命令成功");
             }catch (Exception e){
-                callbackContext.error("写入命令失败");
+                callbackContext.error("e:"+e.toString());
             }
 
         } else {
@@ -284,7 +284,7 @@ public class CordovaXprinter extends CordovaPlugin {
                 }
 
                 printerAdapter.selectCommand(b);
-            }catch (Exception e){
+            }catch (Exception e){callbackContext.error("e:"+e.toString());
             }
         }
     }
@@ -422,7 +422,7 @@ public class CordovaXprinter extends CordovaPlugin {
             callbackContext.success("图片打印成功");
         } catch (IOException e) {
             e.printStackTrace();
-            callbackContext.error("图片打印失败");
+            callbackContext.error("e:"+e.toString());
         }
 
     }
@@ -450,7 +450,7 @@ public class CordovaXprinter extends CordovaPlugin {
             printerAdapter.selectCommand(data);
             printerAdapter.selectCommand(end);
         } catch (IOException e) {
-
+            callbackContext.error("e:"+e.toString());    
         }
 
     }
