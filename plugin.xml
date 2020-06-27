@@ -1,6 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-xprinter" version="0.1">
     <name>CordovaXprinter</name>
     <js-module name="CordovaXprinter" src="www/CordovaXprinter.js">
