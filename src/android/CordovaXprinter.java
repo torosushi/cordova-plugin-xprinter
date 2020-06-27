@@ -52,7 +52,8 @@ public class CordovaXprinter extends CordovaPlugin {
             return true;
         }
 
-        if (action.equals("connectDevice")) {
+        if (action.equals("
+                          ")) {
             String name = args.getString(0);
             this.connectDevice(name,callbackContext);
             return true;
@@ -131,9 +132,9 @@ public class CordovaXprinter extends CordovaPlugin {
             try{
                 String result = printerAdapter.connect(name);
                 if(result.contains("success")){
-                    callbackContext.success("连接设备成功:"+result);
+                    callbackContext.success("s:"+result);
                 }else{
-                    callbackContext.error("连接失败:"+result);
+                    callbackContext.error("e:"+name+" "+result);
                 }
             }catch (Exception e){
                 callbackContext.error(e.toString());
